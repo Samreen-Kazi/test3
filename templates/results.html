@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lily Genesis - Search Results</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-top: 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        strong {
+            color: #007bff;
+        }
+
+        a {
+            color: #333;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        a:hover {
+            color: #007bff;
+        }
+
+        .copyright-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .copyright {
+            font-size: 12px;
+            color: #777;
+        }
+
+        .disclaimer {
+            font-size: 12px;
+            color: #777;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Lily Genesis - Search Results</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>#</th> <!-- New column for result numbers -->
+                    <th>Title</th>
+                    <th>Author</th>
+                    <th>Publisher</th>
+                    <th>Year</th>
+                    <th>Language</th>
+                    <th>File Type</th>
+                    <th>File Size</th>
+                    <th>Download Link</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for info in book_info %}
+                    <tr>
+                        <td>{{ info.number }}</td> <!-- Display result number -->
+                        <td><strong>{{ info.title }}</strong></td>
+                        <td>{{ info.author }}</td>
+                        <td>{{ info.publisher }}</td>
+                        <td>{{ info.year }}</td>
+                        <td>{{ info.language }}</td>
+                        <td>{{ info.file_type }}</td>
+                        <td>{{ info.file_size }}</td>
+                        <td><a href="{{ info.download_link }}" target="_blank">{{ info.download_link }}</a></td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <div class="copyright-container">
+         <p class="disclaimer">This website is for educational purposes only. Using the source code to browse books is not illegal but downloading a paid book for free is.</p>
+        <p class="copyright">&copy; 2024 Lily Genesis. All rights reserved.</p>
+    </div>
+</body>
+</html>
