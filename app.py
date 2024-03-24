@@ -41,6 +41,3 @@ def index():
             return "Please enter a book title or author."
     else:
         return render_template('index.html')
-
-if __name__ == '__main__':
-    app.run(debug=True)
